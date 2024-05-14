@@ -12,10 +12,10 @@ jobs:
       uses: actions/checkout@v3
     - name: Build Docker Image
       run: |
-        cd laravel \
+        cd laravel
         docker build \ 
-        -t ghcr.io/nanangpras/web-app:latest .
+        -t ghcr.io/nanangpras/laravel-app-1:latest .
     - name: Login to github container registry
       run: echo "${{ secrets.TOKEN }}" | docker login ghcr.io -u nanangpras --password-stdin
     - name: Push Docker Image
-      run: docker push ghcr.io/nanangpras/web-app:latest
+      run: docker push ghcr.io/nanangpras/laravel-app-1:latest
